@@ -1,172 +1,185 @@
-# CRM Application
+🚀 Aspire CRM – Full-Stack Customer Relationship Management System
 
-A full-stack Customer Relationship Management (CRM) system built with React, Node.js, Express, and MongoDB.
+A modern full-stack CRM Application built with React, Node.js, Express, and MongoDB, featuring authentication, lead tracking, customer management, and a dashboard with live statistics.
 
-## Features
+✨ Features
 
-- 🔐 **User Authentication** - Secure login/registration with JWT
-- 👥 **User Management** - Admin can manage users and assign roles
-- 📊 **Dashboard** - Overview of leads, customers, and sales metrics
-- 🎯 **Lead Management** - Track and convert leads to customers
-- 👤 **Customer Management** - Manage customer information and interactions
-- 🎨 **Modern UI** - Clean, professional interface with Material-UI
-- 📱 **Responsive Design** - Works on desktop, tablet, and mobile
+🔐 JWT Authentication
 
-## Tech Stack
+👥 Role-based User Management
 
-### Frontend
-- React 19
-- React Router DOM
-- Material-UI (MUI)
-- Axios
-- Notistack (notifications)
-- Vite
+📊 Dashboard Metrics
 
-### Backend
-- Node.js
-- Express.js
-- MongoDB with Mongoose
-- JWT Authentication
-- bcryptjs for password hashing
+🎯 Lead Management
 
-## Quick Start
+👤 Customer Management
 
-### Prerequisites
-- Node.js (v16 or higher)
-- MongoDB (local or Atlas)
+🎨 Modern MUI UI
 
-### Installation
+📱 Fully Responsive
 
-1. **Clone the repository**
-```bash
+🚀 Production Ready (Vercel + Render)
+
+🛠 Tech Stack
+Frontend
+
+React 19
+
+Vite
+
+Material UI
+
+Axios
+
+React Router DOM
+
+Notistack
+
+Backend
+
+Node.js
+
+Express.js
+
+MongoDB + Mongoose
+
+bcryptjs
+
+JWT
+
+CORS
+
+⚡ Quick Start
+🔧 1. Clone the Repository
 git clone <your-repo-url>
-cd crm
-```
+cd Aspire_crm
 
-2. **Install dependencies**
-```bash
-# Backend
+📦 2. Install Dependencies
+Backend
 cd backend
 npm install
 
-# Frontend
+Frontend
 cd ../frontend
 npm install
-```
 
-3. **Set up environment variables**
-
-Create `backend/.env`:
-```env
+🔐 3. Environment Variables
+Backend → backend/.env
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
 NODE_ENV=development
-```
+FRONTEND_URL=http://localhost:5173
 
-4. **Seed the database (optional)**
-```bash
+Frontend → frontend/.env
+VITE_API_URL=http://localhost:5000
+
+🌱 4. (Optional) Seed Default Users
 cd backend
 npm run seed
-```
 
-This creates demo accounts:
-- **Admin**: admin@crm.com / admin123
-- **Sales Agent**: demo@crm.com / password123
-
-5. **Run the application**
-
-```bash
-# Backend (from backend folder)
+Demo Accounts
+Role	Email	Password
+Admin	admin@crm.com
+	admin123
+Sales Agent	demo@crm.com
+	password123
+▶️ 5. Run the Application
+Start Backend
+cd backend
 npm run dev
 
-# Frontend (from frontend folder)
+Start Frontend
+cd frontend
 npm run dev
-```
 
-Frontend: http://localhost:5173  
-Backend: http://localhost:5000
 
-## Deployment
+Frontend URL → http://localhost:5173
 
-### Deploy to Render
+Backend URL → http://localhost:5000
 
-1. **Push to GitHub**
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git push -u origin main
-```
+🚀 Deployment Guide
+🌐 Frontend Deployment — Vercel
+1. Push frontend to GitHub
+2. Import repo in Vercel
+3. Add environment variable:
+VITE_API_URL=https://your-backend-url.onrender.com
 
-2. **Create Web Service on Render**
-- Go to [render.com](https://render.com)
-- New Web Service → Connect GitHub repo
-- **Build Command**: `cd backend && npm install && npm run build`
-- **Start Command**: `cd backend && npm start`
+4. Deploy ✔️
+🟨 Backend Deployment — Render
+Build Command
+npm install
 
-3. **Add Environment Variables**
-- `MONGO_URI` - Your MongoDB connection string
-- `JWT_SECRET` - Your secret key
-- `NODE_ENV` - `production`
+Start Command
+npm start
 
-4. **Deploy!** 🚀
+Add Environment Variables
+MONGO_URI=your_mongodb_url
+JWT_SECRET=your_secret
+NODE_ENV=production
+FRONTEND_URL=https://your-frontend.vercel.app
 
-## Project Structure
+CORS Setup (in backend)
+import cors from "cors";
 
-```
-crm/
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
+  })
+);
+
+📁 Project Structure
+Aspire_crm/
 ├── backend/
-│   ├── controllers/       # Route controllers
-│   ├── middleware/        # Auth & error middleware
-│   ├── models/           # Mongoose models
-│   ├── routes/           # API routes
-│   ├── server.js         # Express app entry point
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── server.js
 │   └── package.json
 ├── frontend/
 │   ├── src/
-│   │   ├── api/          # Axios client
-│   │   ├── components/   # Reusable components
-│   │   ├── pages/        # Page components
-│   │   ├── utils/        # Utility functions
-│   │   ├── App.jsx       # Main app component
-│   │   └── main.jsx      # React entry point
+│   │   ├── api/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── utils/
+│   │   ├── App.jsx
+│   │   └── main.jsx
 │   └── package.json
 └── README.md
-```
 
-## API Endpoints
+📡 API Endpoints
+🔐 Authentication
+POST /api/auth/register
+POST /api/auth/login
 
-### Authentication
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - Login user
+🎯 Leads
+GET    /api/leads
+POST   /api/leads
+GET    /api/leads/:id
+PUT    /api/leads/:id
+DELETE /api/leads/:id
 
-### Leads
-- `GET /api/leads` - Get all leads
-- `POST /api/leads` - Create lead
-- `GET /api/leads/:id` - Get lead by ID
-- `PUT /api/leads/:id` - Update lead
-- `DELETE /api/leads/:id` - Delete lead
+👤 Customers
+GET    /api/customers
+POST   /api/customers
+GET    /api/customers/:id
+PUT    /api/customers/:id
+DELETE /api/customers/:id
 
-### Customers
-- `GET /api/customers` - Get all customers
-- `POST /api/customers` - Create customer
-- `GET /api/customers/:id` - Get customer by ID
-- `PUT /api/customers/:id` - Update customer
-- `DELETE /api/customers/:id` - Delete customer
+👥 Users (Admin)
+GET    /api/users
+PUT    /api/users/:id
+DELETE /api/users/:id
 
-### Users (Admin only)
-- `GET /api/users` - Get all users
-- `PUT /api/users/:id` - Update user role
-- `DELETE /api/users/:id` - Delete user
+📊 Dashboard
+GET /api/dashboard/stats
 
-### Dashboard
-- `GET /api/dashboard/stats` - Get dashboard statistics
+📄 License
+MIT License
 
-## License
+👨‍💻 Author
 
-MIT
-
-## Author
-
-Siddhi Vinayaka Raghumanda
+IJJUROUTHU HEMANTH
+Aspire CRM — Full-Stack CRM Application
