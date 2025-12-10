@@ -70,7 +70,7 @@ A modern, lightweight Customer & Leads Management System built using **MERN Stac
 ## 📁 Project Structure
 
 A high-level overview of the project directory:
-
+```
 Aspire_CRM/
 │
 ├── backend/
@@ -88,7 +88,7 @@ Aspire_CRM/
 │   └── .env             # Environment variables (Frontend)
 │
 └── README.md
-
+```
 ---
 
 ## ⚙️ Environment Variables
