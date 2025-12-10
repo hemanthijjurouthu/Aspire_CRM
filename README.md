@@ -1,185 +1,142 @@
-🚀 Aspire CRM – Full-Stack Customer Relationship Management System
+# 🌟 Aspire CRM: Full-Stack Customer Relationship Management
 
-A modern full-stack CRM Application built with React, Node.js, Express, and MongoDB, featuring authentication, lead tracking, customer management, and a dashboard with live statistics.
+A modern, lightweight Customer & Leads Management System built using **MERN Stack** (MongoDB, Express, React, Node.js). Designed for businesses to manage leads, customers, authentication, and view performance on a real-time dashboard.
 
-✨ Features
+---
 
-🔐 JWT Authentication
+## 🔗 Live Application URLs
 
-👥 Role-based User Management
 
-📊 Dashboard Metrics
+## 🚀 Key Features
 
-🎯 Lead Management
+* **🔐 Authentication & Authorization:**
+    * Secure **JWT-based** login & signup.
+    * **Role-based access** control (Admin/User).
+    * Protected routes on both frontend & backend.
 
-👤 Customer Management
+* **📊 Dashboard:**
+    * Real-time stats for total leads, customers, and conversion rates.
+    * Growth insights & key business metrics.
+    * Fully responsive layout.
+    
+* **👥 Leads Management:**
+    * **CRUD** operations (Add, update, delete, and track leads).
+    * Manage lead status, source, and contact details.
+    * Search & filter support.
 
-🎨 Modern MUI UI
+* **🧑‍💼 Customers Management:**
+    * Ability to **convert leads to customers**.
+    * Full CRUD operations for customer profiles.
+    * Tagging, categorization, and detailed profile information.
 
-📱 Fully Responsive
+* **👨‍💻 User Management (Admin Only):**
+    * Create and manage internal team members.
+    * Role assignment and permission control.
 
-🚀 Production Ready (Vercel + Render)
+* **🎨 Modern UI:**
+    * Built with React + **Material UI (MUI)**.
+    * Smooth animations and responsive design.
+    * Clean, professional SaaS look and feel.
 
-🛠 Tech Stack
-Frontend
+---
 
-React 19
+## 🛠️ Tech Stack
 
-Vite
+### Frontend
 
-Material UI
+| Technology | Purpose |
+| :--- | :--- |
+| **React (Vite)** | Core library for building the user interface. |
+| **Material UI (MUI)** | Component library for styling and modern design. |
+| **Axios** | Promise-based HTTP client for API communication. |
+| **React Router** | For declarative client-side routing. |
 
-Axios
+### Backend
 
-React Router DOM
+| Technology | Purpose |
+| :--- | :--- |
+| **Node.js + Express.js** | Server-side runtime and web application framework. |
+| **MongoDB + Mongoose** | NoSQL database and Object Data Modeling (ODM) library. |
+| **JWT Authentication** | Secure token-based access control. |
+| **CORS Enabled** | Handles cross-origin requests securely. |
+| **Render Deployment** | Cloud platform for hosting the backend API. |
 
-Notistack
+---
 
-Backend
+## 📁 Project Structure
 
-Node.js
+A high-level overview of the project directory:
 
-Express.js
+Aspire_CRM/ │ ├── backend/ │ ├── routes/ # API route definitions │ ├── controllers/ # Business logic │ ├── models/ # Mongoose schemas │ ├── middleware/ # Authentication and error handling │ ├── server.js # Server entry point │ └── .env # Environment variables (Backend) │ ├── frontend/ │ ├── src/ # React source files │ ├── public/ # Static assets │ ├── vite.config.js # Vite build configuration │ └── .env # Environment variables (Frontend) │ └── README.md
 
-MongoDB + Mongoose
+---
 
-bcryptjs
+## ⚙️ Environment Variables
 
-JWT
+Create `.env` files in the respective directories and add these variables:
 
-CORS
+### Backend `.env`
 
-⚡ Quick Start
-🔧 1. Clone the Repository
-git clone <your-repo-url>
-cd Aspire_crm
+### Frontend `.env`
 
-📦 2. Install Dependencies
-Backend
+---
+
+## 🚀 Local Development Setup
+
+Follow these steps to run the application on your local machine.
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone [https://github.com/hemanthijjurouthu/Aspire_CRM.git](https://github.com/hemanthijjurouthu/Aspire_CRM.git)
+cd Aspire_CRM
+
+Backend Setup
+Bash
+
 cd backend
 npm install
-
-Frontend
-cd ../frontend
-npm install
-
-🔐 3. Environment Variables
-Backend → backend/.env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
-NODE_ENV=development
-FRONTEND_URL=http://localhost:5173
-
-Frontend → frontend/.env
-VITE_API_URL=http://localhost:5000
-
-🌱 4. (Optional) Seed Default Users
-cd backend
-npm run seed
-
-Demo Accounts
-Role	Email	Password
-Admin	admin@crm.com
-	admin123
-Sales Agent	demo@crm.com
-	password123
-▶️ 5. Run the Application
-Start Backend
-cd backend
-npm run dev
-
-Start Frontend
-cd frontend
-npm run dev
-
-
-Frontend URL → http://localhost:5173
-
-Backend URL → http://localhost:5000
-
-🚀 Deployment Guide
-🌐 Frontend Deployment — Vercel
-1. Push frontend to GitHub
-2. Import repo in Vercel
-3. Add environment variable:
-VITE_API_URL=https://your-backend-url.onrender.com
-
-4. Deploy ✔️
-🟨 Backend Deployment — Render
-Build Command
-npm install
-
-Start Command
 npm start
+Backend API runs at: http://localhost:8080/api
 
-Add Environment Variables
-MONGO_URI=your_mongodb_url
-JWT_SECRET=your_secret
-NODE_ENV=production
-FRONTEND_URL=https://your-frontend.vercel.app
+3️⃣ Frontend Setup
+Bash
 
-CORS Setup (in backend)
-import cors from "cors";
+cd frontend
+npm install
+npm run dev
+Frontend runs at: http://localhost:5173
 
-app.use(
-  cors({
-    origin: process.env.FRONTEND_URL,
-    credentials: true,
-  })
-);
+Resource,Method,Endpoint,Description
+Auth,POST,/api/auth/register,Create a new user account.
+,POST,/api/auth/login,Authenticate and return JWT.
+Leads,GET,/api/leads,Retrieve all leads.
+,POST,/api/leads,Create a new lead.
+,PUT,/api/leads/:id,Update an existing lead.
+,DELETE,/api/leads/:id,Delete a lead.
+Customers,GET,/api/customers,Retrieve all customers.
+,POST,/api/customers,Create a new customer.
+,PUT,/api/customers/:id,Update an existing customer.
+,DELETE,/api/customers/:id,Delete a customer.
+Dashboard,GET,/api/dashboard/stats,Get key statistics for the dashboard.
+Users,GET,/api/users,Get all users (Admin only).
+,POST,/api/users,Create a new user (Admin only).
 
-📁 Project Structure
-Aspire_crm/
-├── backend/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── server.js
-│   └── package.json
-├── frontend/
-│   ├── src/
-│   │   ├── api/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── utils/
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   └── package.json
-└── README.md
+Future Enhancements
+Email notifications for lead updates.
 
-📡 API Endpoints
-🔐 Authentication
-POST /api/auth/register
-POST /api/auth/login
+Advanced Lead Pipelines visualization.
 
-🎯 Leads
-GET    /api/leads
-POST   /api/leads
-GET    /api/leads/:id
-PUT    /api/leads/:id
-DELETE /api/leads/:id
+Comprehensive Report Generation features.
 
-👤 Customers
-GET    /api/customers
-POST   /api/customers
-GET    /api/customers/:id
-PUT    /api/customers/:id
-DELETE /api/customers/:id
+Detailed Activity Logs.
 
-👥 Users (Admin)
-GET    /api/users
-PUT    /api/users/:id
-DELETE /api/users/:id
+Integrations (e.g., Google Maps, WhatsApp API, etc.).
 
-📊 Dashboard
-GET /api/dashboard/stats
-
-📄 License
-MIT License
-
-👨‍💻 Author
-
+💡 Author
 IJJUROUTHU HEMANTH
-Aspire CRM — Full-Stack CRM Application
+
+Email: hemanthijjurouthu@gmail.com
+
+GitHub: https://github.com/hemanthijjurouthu
+
