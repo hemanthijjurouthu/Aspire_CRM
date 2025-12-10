@@ -139,7 +139,7 @@ npm run dev
 ![Leads Management](./screenshots/lead_page.png)
 
 ### 👤 Customers Page
-![Customers](./screenshots/customers.png)
+![Customers](./screenshots/Customers.png)
 
 ### ➕ Add New Customer
 ![Add Lead](./screenshots/customer_add.png)
