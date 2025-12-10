@@ -6,6 +6,10 @@ A modern, lightweight Customer & Leads Management System built using **MERN Stac
 
 ## 🔗 Live Application URLs
 
+| Component | URL |
+| :--- | :--- |
+| **Live Demo** | [https://aspire-crm-mauve.vercel.app](https://aspire-crm-mauve.vercel.app) |
+
 
 ## 🚀 Key Features
 
@@ -87,7 +91,6 @@ Follow these steps to run the application on your local machine.
 
 ### 1️⃣ Clone the Repository
 
-```bash
 git clone [https://github.com/hemanthijjurouthu/Aspire_CRM.git](https://github.com/hemanthijjurouthu/Aspire_CRM.git)
 cd Aspire_CRM
 
@@ -97,7 +100,6 @@ Bash
 cd backend
 npm install
 npm start
-Backend API runs at: http://localhost:8080/api
 
 3️⃣ Frontend Setup
 Bash
@@ -105,38 +107,39 @@ Bash
 cd frontend
 npm install
 npm run dev
-Frontend runs at: http://localhost:5173
 
-Resource,Method,Endpoint,Description
-Auth,POST,/api/auth/register,Create a new user account.
-,POST,/api/auth/login,Authenticate and return JWT.
-Leads,GET,/api/leads,Retrieve all leads.
-,POST,/api/leads,Create a new lead.
-,PUT,/api/leads/:id,Update an existing lead.
-,DELETE,/api/leads/:id,Delete a lead.
-Customers,GET,/api/customers,Retrieve all customers.
-,POST,/api/customers,Create a new customer.
-,PUT,/api/customers/:id,Update an existing customer.
-,DELETE,/api/customers/:id,Delete a customer.
-Dashboard,GET,/api/dashboard/stats,Get key statistics for the dashboard.
-Users,GET,/api/users,Get all users (Admin only).
-,POST,/api/users,Create a new user (Admin only).
+## 📡 API Endpoints
 
-Future Enhancements
-Email notifications for lead updates.
+| Resource | Method | Endpoint | Description |
+| :--- | :--- | :--- | :--- |
+| **Auth** | `POST` | `/api/auth/register` | Create a new user account. |
+| | `POST` | `/api/auth/login` | Authenticate and return JWT. |
+| **Leads** | `GET` | `/api/leads` | Retrieve all leads. |
+| | `POST` | `/api/leads` | Create a new lead. |
+| | `PUT` | `/api/leads/:id` | Update an existing lead. |
+| | `DELETE` | `/api/leads/:id` | Delete a lead. |
+| **Customers** | `GET` | `/api/customers` | Retrieve all customers. |
+| | `POST` | `/api/customers` | Create a new customer. |
+| | `PUT` | `/api/customers/:id` | Update an existing customer. |
+| | `DELETE` | `/api/customers/:id` | Delete a customer. |
+| **Dashboard** | `GET` | `/api/dashboard/stats` | Get key statistics for the dashboard. |
+| **Users** | `GET` | `/api/users` | Get all users (Admin only). |
+| | `POST` | `/api/users` | Create a new user (Admin only). |
 
-Advanced Lead Pipelines visualization.
+## 🏆 Future Enhancements
 
-Comprehensive Report Generation features.
+* Email notifications for lead updates.
+* Advanced Lead Pipelines visualization.
+* Comprehensive Report Generation features.
+* Detailed Activity Logs.
+* Integrations (e.g., Google Maps, WhatsApp API, etc.).
 
-Detailed Activity Logs.
+---
 
-Integrations (e.g., Google Maps, WhatsApp API, etc.).
+## 💡 Author
 
-💡 Author
-IJJUROUTHU HEMANTH
+* **IJJUROUTHU HEMANTH**
+* **Email:** [hemanthijjurouthu@gmail.com](mailto:hemanthijjurouthu@gmail.com)
+* **GitHub:** [https://github.com/hemanthijjurouthu](https://github.com/hemanthijjurouthu)
 
-Email: hemanthijjurouthu@gmail.com
-
-GitHub: https://github.com/hemanthijjurouthu
 
