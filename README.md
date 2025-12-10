@@ -126,6 +126,25 @@ npm run dev
 | **Users** | `GET` | `/api/users` | Get all users (Admin only). |
 | | `POST` | `/api/users` | Create a new user (Admin only). |
 
+
+## 📸 Screenshots
+
+### 🔐 Login Page
+![Login Page](./screenshots/register.png)
+
+### 🏠 Dashboard
+![Dashboard](./screenshots/dashboard.png)
+
+### 🎯 Leads Management
+![Leads Management](./screenshots/lead_page.png)
+
+### 👤 Customers Page
+![Customers](./screenshots/customers.png)
+
+### ➕ Add New Customer
+![Add Lead](./screenshots/customer_add.png)
+
+
 ## 🏆 Future Enhancements
 
 * Email notifications for lead updates.
