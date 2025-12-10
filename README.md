@@ -71,7 +71,23 @@ A modern, lightweight Customer & Leads Management System built using **MERN Stac
 
 A high-level overview of the project directory:
 
-Aspire_CRM/ │ ├── backend/ │ ├── routes/ # API route definitions │ ├── controllers/ # Business logic │ ├── models/ # Mongoose schemas │ ├── middleware/ # Authentication and error handling │ ├── server.js # Server entry point │ └── .env # Environment variables (Backend) │ ├── frontend/ │ ├── src/ # React source files │ ├── public/ # Static assets │ ├── vite.config.js # Vite build configuration │ └── .env # Environment variables (Frontend) │ └── README.md
+Aspire_CRM/
+│
+├── backend/
+│   ├── routes/          # API route definitions
+│   ├── controllers/     # Business logic
+│   ├── models/          # Mongoose schemas
+│   ├── middleware/      # Authentication & error handling
+│   ├── server.js        # Server entry point
+│   └── .env             # Environment variables (Backend)
+│
+├── frontend/
+│   ├── src/             # React source files
+│   ├── public/          # Static assets
+│   ├── vite.config.js   # Vite build configuration
+│   └── .env             # Environment variables (Frontend)
+│
+└── README.md
 
 ---
 
