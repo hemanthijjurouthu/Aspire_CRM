@@ -23,7 +23,7 @@ app.use(express.json()); // Must come BEFORE routes
 // ====== CORS & Request Logging ======
 const allowedOrigins = [
   'http://localhost:5173', // local frontend
-  'https://<your-frontend-url>.vercel.app' // deployed frontend URL
+  'https://aspire-crm-mauve.vercel.app' // deployed frontend URL
 ];
 
 app.use(cors({
