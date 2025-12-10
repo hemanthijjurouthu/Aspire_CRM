@@ -16,7 +16,9 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
-app.use(express.json()); // Must come BEFORE app.use('/api/auth', authRoutes)
+
+// ====== Middleware ======
+app.use(express.json()); // Must come BEFORE routes
 
 // ====== CORS & Request Logging ======
 const allowedOrigins = [
@@ -77,13 +79,13 @@ app.use('/api/customers', customerRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/users', userRoutes);
 
-// Serve frontend in production safely
+// ====== Serve Frontend in Production ======
 if (process.env.NODE_ENV === 'production') {
   const frontendDistPath = path.join(__dirname, '../frontend/dist');
   app.use(express.static(frontendDistPath));
 
-  // ✅ Fix for Express 5 wildcard route
-  app.get('/*', (req, res) => {
+  // SPA fallback for Express 5 using regex
+  app.get(/^\/.*$/, (req, res) => {
     res.sendFile(path.join(frontendDistPath, 'index.html'));
   });
 }
