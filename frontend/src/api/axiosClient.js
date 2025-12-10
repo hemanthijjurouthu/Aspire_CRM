@@ -2,8 +2,8 @@ import axios from 'axios';
 
 // Use relative URL in production, localhost in development
 const baseURL = import.meta.env.MODE === 'production' 
-  ? '/api' 
-  : import.meta.env.VITE_API_URL || 'http://localhost:8080/api';
+  ? import.meta.env.VITE_API_URL
+  : 'http://localhost:8080/api';
 
 const axiosClient = axios.create({
   baseURL,
