@@ -19,7 +19,10 @@ const app = express();
 app.use(express.json()); // Must come BEFORE app.use('/api/auth', authRoutes)
 
 // ====== CORS & Request Logging ======
-const allowedOrigins = ['http://localhost:5173']; // frontend URL
+const allowedOrigins = [
+  'http://localhost:5173', // local frontend
+  'https://<your-frontend-url>.vercel.app' // deployed frontend URL
+];
 
 app.use(cors({
   origin: function(origin, callback){
@@ -79,7 +82,8 @@ if (process.env.NODE_ENV === 'production') {
   const frontendDistPath = path.join(__dirname, '../frontend/dist');
   app.use(express.static(frontendDistPath));
 
-  app.get('*', (req, res) => {
+  // ✅ Fix for Express 5 wildcard route
+  app.get('/*', (req, res) => {
     res.sendFile(path.join(frontendDistPath, 'index.html'));
   });
 }
